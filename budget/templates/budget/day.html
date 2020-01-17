@@ -1,0 +1,23 @@
+{% extends 'budget/base.html' %}
+{% load static %}
+{% block content %}
+<br><br>
+<h3>Daily Expenses</h3><br>
+<div class="row">
+<div class="col-6 align-left">
+<form >
+<b>Enter Date to View:</b>
+<input name="viewdate" id="viewdate"  placeholder="YYYY-MM-DD" width="30%" required><br>
+</form>
+</div>
+
+<div id="replaceable-content" class="col-6">
+  {% include 'budget/viewday-results.html' %}
+</div>
+</div>
+
+
+
+<button onclick="location.href='{% url 'add_incomes'  %}'">ADD INCOME</button>
+<button onclick="location.href='{% url 'add_expenses'  %}'">ADD EXPENSE</button>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'budget/base.html' %}
+{% block content %}
+<form action="{% url 'add_expenses' %}" method="post">
+  {% csrf_token %}
+  Date:<input name="date" id="datepicker" width="270" required><br>
+  Text:<input type="text" name="text" required><br>
+  Amount:<input type="text" name="amount" required><br>
+  <input type="submit" value="ADD">
+</form>
+<script type="text/javascript">
+    $('#datepicker').datepicker({
+        uiLibrary: 'bootstrap'
+    });
+</script>
+{% endblock %}

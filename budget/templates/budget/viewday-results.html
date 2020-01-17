@@ -1,0 +1,23 @@
+{% if incomeview or expenseview %}
+<h5><b>Savings:</b>{{ savings }}</h5><br>
+{% if incomeview %}
+<h4><b>INCOMES</b></h4>
+<b>Total Income:</b>{{ income }}
+<table border="1">
+{% for i in incomeview %}
+<tr><td>{{ i.text }}</td> - <td>{{ i.amount }} </td></tr>
+{% endfor %}
+</table>
+{% endif %}
+{% if expenseview %}<br>
+<h4><b>EXPENSES</b></h4><b>Total Expense:</b>{{ expense }}
+<table border="1">
+{% for i in expenseview %}
+<tr><td>{{ i.text }}</td> - <td>{{ i.amount }} </td></tr>
+{% endfor %}
+</table>
+{% endif %}
+{% else %}
+<p>NO RESULTS FOUND.</p>
+{% endif %}
+<br><br>
